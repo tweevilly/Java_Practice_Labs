@@ -1,0 +1,51 @@
+/* Exact Change
+Write a program with total change amount in pennies as an integer input, 
+and output the change using the fewest coins, one coin type per line. 
+The coin types are Dollars, Quarters, Dimes, Nickels, and Pennies. 
+Use singular and plural coin names as appropriate, like 1 Penny vs. 2 Pennies.*/
+
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int totalCents;
+      int dollars, quarters, dimes, nickels, pennies;      // Declare multiple integer variables in a single statement.
+
+      totalCents = scnr.nextInt();
+
+      if (totalCents <= 0) {
+         System.out.println("No change");
+         return;
+      }
+
+  // Calculate coins
+      dollars = totalCents / 100;
+      totalCents %= 100;
+      quarters = totalCents / 25;
+      totalCents %= 25;
+      dimes = totalCents / 10;
+      totalCents %= 10;
+      nickels = totalCents / 5;
+      totalCents %= 5;
+      pennies = totalCents;
+
+  // Output results (only print nonzero amounts)
+      if (dollars > 0) {
+         System.out.println(dollars + " " + (dollars == 1 ? "Dollar" : "Dollars"));
+      }
+      if (quarters > 0) {
+         System.out.println(quarters + " " + (quarters == 1 ? "Quarter" : "Quarters"));
+      }
+      if (dimes > 0) {
+         System.out.println(dimes + " " + (dimes == 1 ? "Dime" : "Dimes"));
+      }
+      if (nickels > 0) {
+         System.out.println(nickels + " " + (nickels == 1 ? "Nickel" : "Nickels"));
+      }
+      if (pennies > 0) {
+         System.out.println(pennies + " " + (pennies == 1 ? "Penny" : "Pennies"));
+      }
+   }
+
+}
