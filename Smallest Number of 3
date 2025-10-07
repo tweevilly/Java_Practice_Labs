@@ -5,25 +5,14 @@ import java.util.Scanner;
 public class LabProgram {
    public static void main(String[] args) {
       Scanner scnr = new Scanner(System.in);
-      int input1;
-      int input2;
-      int input3;
-      
-      input1 = scnr.nextInt();
-      input2 = scnr.nextInt();
-      input3 = scnr.nextInt();
-      
-      if ((input1 <= input2) && (input2 <= input3)){
-         System.out.println(input1);
-      }
-      else if ((input2 <= input1) && (input2 <= input3)){
-         System.out.println(input2);
-      }
-      else{
-         System.out.println(input3);
-      }
+      int input1 = scnr.nextInt();
+      int input2 = scnr.nextInt();
+      int input3 = scnr.nextInt();
+
+      int smallest = Math.min(input1, Math.min(input2, input3));
+      System.out.println(smallest);
    
    }
 }
 
-# future improvement : consider more elegant ways to shorten code
+# reduced code to 13 lines
