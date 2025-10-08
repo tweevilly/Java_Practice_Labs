@@ -1,0 +1,31 @@
+/* Integer userNum is read from input. Write a while loop that iterates until userNum is negative. 
+In each iteration:
+Update integer finalNum as follows:
+If userNum is not divisible by 3, output "lose" and do not update finalNum.
+Otherwise, output "win" and increment finalNum.
+Then, read an integer from input into variable userNum.
+End each output with a newline. */
+
+import java.util.Scanner;
+
+public class ResultCalculator {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int userNum;
+      int finalNum;
+   
+      finalNum = 0;
+      userNum = scnr.nextInt();
+
+      while (userNum >= 0) {
+         if (userNum % 3 == 0) {
+            System.out.println("win");
+            finalNum ++ ;
+         }
+         else {
+            System.out.println("lose");
+         }
+         userNum = scnr.nextInt();      //read next input from user
+      System.out.println("Final number is " + finalNum);
+   }
+}
