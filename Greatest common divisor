@@ -1,0 +1,35 @@
+/* Euclid's Algorithm is an efficient method for computing the greatest common divisor (GCD) of two integers, 
+which is the largest number that divides both of them without leaving a remainder.
+The basic Euclidean algorithm is based on the principle that the GCD of two numbers does not
+change if the larger number is replaced by its remainder when divided by the smaller number. 
+The steps are as follows:
+1. Divide the larger number by the smaller number.
+2. Replace the larger number with the smaller number and the smaller number with the remainder from step 1.
+3. Repeat the process until the remainder is zero. 
+The last non-zero remainder is the GCD of the original two numbers. (zybooks 4.3 GCD)*/
+
+import java.util.Scanner;
+public class GCDCalc {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int numA;  // User input
+      int numB;  // User input
+
+System.out.print("Enter first positive integer: ");
+      numA = scnr.nextInt();
+
+      System.out.print("Enter second positive integer: ");
+      numB = scnr.nextInt();
+
+      while (numA != numB) { // Euclid's algorithm
+         if (numB > numA) {
+            numB = numB - numA;
+         }
+         else {
+            numA = numA - numB;
+         }
+      }
+
+      System.out.println("GCD is: " + numA);
+   }
+}
