@@ -11,44 +11,68 @@ public class BreakAndContinue {
       int b;
 
       for (a = 2; a < 5; ++a) {                //outer loop variable a goes 2-4
-         result = 1;
-         
+         result = 1;         
          for (b = 0; b < 3; ++b) {            //inner loop variable b goes 0-2: each time through inner loop result is multiplied by a and printed.
-            result *= a;
-            
-            System.out.println(result);  
-            
+            result *= a;            
+            System.out.println(result);              
             if (result == stop) {             //If result equals stop, the loop(s) break
                break;
             }
-         }
-         
+         }         
          if (result == stop) {
             break;
          }
+/* How to read the nested loops
+      Outer loop (a = 2)
+           result = 1 (set at start of each outer loop)
+             Inner loop:
+             b = 0 → result = 1 * 2 = 2 → print 2
+             b = 1 → result = 2 * 2 = 4 → print 4
+             b = 2 → result = 4 * 2 = 8 → print 8
+             Inner loop done.
+      Outer loop (a = 3)
+           result = 1 (set at start of each outer loop)
+             Inner loop:
+             b = 0 → result = 1 * 3 = 3 → print 3
+             b = 1 → result = 3 * 3 = 9 → print 9
+             b = 2 → result = 9 * 3 = 27 → print 27
+             Inner loop done.
+      Outer loop (a = 4)
+           result = 1
+             Inner loop:
+             b = 0 → result = 1 * 4 = 4 → print 4
+             b = 1 → result = 4 * 4 = 16 → print 16
+             b = 2 → result = 16 * 4 = 64 → print 64
+             Inner loop done.  */
+____________________________________________________________________________________________________________
+
+/* "Simon Says" is a memory game where "Simon" outputs a sequence of 10 characters (R, G, B, Y) 
+and the user must repeat the sequence. Create a for loop that compares the two strings starting from 
+index 0. For each match, add one point to userScore. Upon a mismatch, exit the loop using a break statement. 
+Assume simonPattern and userPattern are always the same length. 
+   Ex: The following patterns yield a userScore of 4:
+         simonPattern: RRGBRYYBGY
+         userPattern:  RRGBBRYBGY   */
+
+import java.util.Scanner;
+
+public class SimonSays {
+   public static void main (String [] args) {
+      Scanner scnr = new Scanner(System.in);
+      String simonPattern = scnr.next();
+      String userPattern = scnr.next();
+      int userScore =0;
+      int i;
+
+      for (i =0; i < simonPattern.length(); ++i){                         // iterate through simonPattern
+         if (simonPattern.charAt(i) == userPattern.charAt(i)){            //compare character at position i
+            userScore += 1;
+         }
+         else{
+            break;
+         }
       }
+      System.out.println("userScore: " + userScore);
+      return;
    }
 }
-
-/* How to read the nested loops
-Outer loop (a = 2)
-  result = 1 (set at start of each outer loop)
-    Inner loop:
-    b = 0 → result = 1 * 2 = 2 → print 2
-    b = 1 → result = 2 * 2 = 4 → print 4
-    b = 2 → result = 4 * 2 = 8 → print 8
-    Inner loop done.
-Outer loop (a = 3)
-  result = 1 (set at start of each outer loop)
-    Inner loop:
-    b = 0 → result = 1 * 3 = 3 → print 3
-    b = 1 → result = 3 * 3 = 9 → print 9
-    b = 2 → result = 9 * 3 = 27 → print 27
-    Inner loop done.
-Outer loop (a = 4)
-  result = 1
-    Inner loop:
-    b = 0 → result = 1 * 4 = 4 → print 4
-    b = 1 → result = 4 * 4 = 16 → print 16
-    b = 2 → result = 16 * 4 = 64 → print 64
-    Inner loop done.  */
