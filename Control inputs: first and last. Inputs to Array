@@ -1,0 +1,61 @@
+/* (zybooks 5.15 LAB: Output values below an amount) 
+Write a program that first gets a list of integers from input. 
+The input begins with an integer indicating the number of integers that follow. 
+Then, get the last value from the input, which indicates a threshold. 
+Output all integers less than or equal to that last threshold value. 
+Assume that the list will always contain fewer than 20 integers. */
+
+import java.util.Scanner; 
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int[] userVals = new int[20];  
+      int numElements = scnr.nextInt();
+      int threshold;
+      int i;
+            
+      for (i =0; i < numElements; ++i) {
+         userVals[i] = scnr.nextInt();
+      }
+      threshold = scnr.nextInt();
+      for (i =0; i < userVals[i]; ++i) {
+         if (userVals[i] <= threshold){
+         System.out.print(userVals[i] + ",");
+         }
+      }
+      System.out.println();
+   }
+}
+
+/* (zybooks 5.18 LAB: Contains the character)
+Write a program that reads an integer, a list of words, and a character. 
+The integer signifies how many words are in the list. 
+The output of the program is every word in the list that contains the character 
+at least once. For coding simplicity, follow each output word by a comma, even 
+the last one. Add a newline to the end of the last output. 
+Assume at least one word in the list will contain the given character. 
+Assume that the list of words will always contain fewer than 20 words. */
+
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int numElements = scnr.nextInt();
+      String [] userVals = new String [20];
+      String letter= " ";
+      int i, j;
+      
+      for (i =0; i < numElements; ++i) {
+         userVals[i] = scnr.next();
+      }       
+       letter = scnr.next();       
+      for (i =0; i < numElements; ++i) {
+         if (userVals[i].contains(letter)){
+             System.out.print(userVals[i] + ",");
+          }
+       } 
+      System.out.println();
+   }
+}
