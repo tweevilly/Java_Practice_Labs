@@ -1,0 +1,49 @@
+/* (zybooks 6.1.4: Methods with parameters and return values)
+Define a method calculateVal() that takes two integer parameters and returns the result 
+of subtracting the product of 2 and the second parameter from the first parameter. */
+
+import java.util.Scanner;
+
+public class ValueCalculator {
+
+   public static int calculateVal(int num1, int num2) {   
+   return num1 - (2*num2);
+   }
+
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int input1;
+      int input2;
+      int result;
+      
+      input1 = scnr.nextInt();
+      input2 = scnr.nextInt();
+
+      result = calculateVal(input1, input2);
+
+      System.out.println(result);
+   }
+}
+
+/* (zybooks 6.2.3: Print methods.)
+Read four strings from input and call printCapital() to output as follows.
+Ex: If the input is Rome Madrid Italy Spain, then the output is:
+Rome is Italy's capital.
+Madrid is Spain's capital. */
+
+import java.util.Scanner;
+public class Capital {
+	public static void printCapital(String var1, String var2) {
+		System.out.println(var1 + " is " + var2 + "'s capital.");
+	}
+	public static void main (String [] args) {
+      Scanner scnr = new Scanner(System.in);
+      String input1 = scnr.next();
+      String input2 = scnr.next();
+      String input3 = scnr.next();
+      String input4 = scnr.next();
+
+      printCapital(input1, input3);
+      printCapital(input2, input4);
+	}
+}
