@@ -1,0 +1,50 @@
+/* (zybooks 6.3.2: Method stubs: Statistics.)
+Define stubs for the methods called by the below main(). 
+ach stub should print "FIXME: Finish methodName()" followed by a newline, 
+and should return -1. 
+Example output:
+FIXME: Finish getUserNum()
+FIXME: Finish getUserNum()
+FIXME: Finish computeAvg()
+Avg: -1  
+method stubs, which are placeholder methods that compile and run 
+but don’t yet perform their real task */
+
+import java.util.Scanner;
+
+public class MthdStubsStatistics {
+   public static int getUserNum() {
+      System.out.println("FIXME: Finish getUserNum()");
+      return -1;
+   } 
+    public static int computeAvg(int num1, int num2) {
+      System.out.println("FIXME: Finish computeAvg()");
+      return -1;
+   }
+
+   public static void main(String [] args) {
+      int userNum1;
+      int userNum2;
+      int avgResult;
+
+      userNum1 = getUserNum();
+      userNum2 = getUserNum();
+
+      avgResult = computeAvg(userNum1, userNum2);
+
+      System.out.println("Avg: " + avgResult);
+   }
+}
+
+/* Testing with two calls to getUserNum and one call to computeAvg:
+output:
+FIXME: Finish getUserNum()
+FIXME: Finish getUserNum()
+FIXME: Finish computeAvg()
+Avg: -1
+Testing with one call to getUserNum and two calls to computeAvg: 
+output:
+FIXME: Finish getUserNum()
+FIXME: Finish computeAvg()
+FIXME: Finish computeAvg()
+Avg: -1    */
