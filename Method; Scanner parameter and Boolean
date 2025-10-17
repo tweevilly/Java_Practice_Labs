@@ -1,0 +1,37 @@
+*/  (zybooks 6.6.2: Methods with loops.)
+Define the method inspectVals() with a Scanner parameter that reads integers from 
+input until -1 is read. The method returns true if none of the integers read 
+before -1 are between 900 and 1000 inclusive. Otherwise, the method returns false.
+Ex: If the input is 2 950 1020 -1, then the output is:  Unallowed value(s)  */
+
+import java.util.Scanner;
+
+public class ValueInspector {
+   
+   public static boolean inspectVals(Scanner scnr) {
+      int number = scnr.nextInt();
+      boolean allAllowed = true;
+   
+      while (number != -1) {
+         if (number >= 900 && number <= 1000){
+         allAllowed = false;
+         }
+         number = scnr.nextInt();
+      }
+
+      return allAllowed;
+   }
+
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      boolean allAllowed;
+      
+      allAllowed = inspectVals(scnr);
+      if (allAllowed) {
+			System.out.println("All allowed values");
+		}
+		else {
+			System.out.println("Unallowed value(s)");
+		}
+   }
+}
