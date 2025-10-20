@@ -1,0 +1,33 @@
+/* (zybooks 6.27.1: LAB: Flip a coin)
+Define a method named coinFlip that takes a Random object and returns Heads or Tails
+according to a random value 1 or 0. Assume the value 1 represents Heads and 0 
+represents Tails. Then, write a main program that reads the desired number of coin 
+flips as an input, calls method coinFlip() repeatedly according to the number of coin 
+flips, and outputs the results. Assume the input is a value greater than 0. */
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class LabProgram {   
+   public static String coinFlip(Random rand) {
+      int flipResult = rand.nextInt(2);  // Generates 0 or 1
+      if (flipResult == 1) {
+         return "Heads";
+      } else {
+         return "Tails";
+      }
+   }
+   
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      Random rand = new Random(2); // Unique seed
+      
+      int numFlips = scnr.nextInt();   // Read number of flips
+      int i;
+
+      // Perform coin flips and print results
+      for (i = 0; i < numFlips; ++i) {
+         System.out.println(coinFlip(rand));
+      }
+   }
+}
