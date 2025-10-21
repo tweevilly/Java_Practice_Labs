@@ -28,3 +28,14 @@ public class LabProgram {
       System.out.println("fibonacci(" + startNum + ") is " + fibonacci(startNum));
    }
 }
+
+/* to Print out the sequence to the nth value is a small adjustment:
+      int first = 0;
+      int second = 1;  
+
+      for (int i = 0; i < n; ++i) {
+         int next = first + second;  // Calculate next number
+         first = second;             // Move forward in sequence
+         second = next;
+         System.out.print(first + " ");
+      }   */
