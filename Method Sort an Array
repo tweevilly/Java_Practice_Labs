@@ -1,0 +1,40 @@
+/* (6.28 LAB: Sort an array)
+Define a method named sortArray that takes an array of integers and the number of elements in the array as parameters. Method sortArray() modifies the array parameter by sorting the elements in descending order (highest to lowest). Then write a main program that reads a list of integers from input, stores the integers in an array, calls sortArray(), and outputs the sorted array. The first input integer indicates how many numbers are in the list. Assume that the list will always contain less than 20 integers. 
+Ex: If the input is:
+5 10 4 39 12 2
+the output is:
+39,12,10,4,2,  */
+
+import java.util.Scanner;
+
+public class LabProgram {
+
+   public static void sortArray(int[] arr, int numElements) {
+      for (int i = 0; i < numElements - 1; ++i) {
+         for (int j = i + 1; j < numElements; ++j) {
+            if (arr[i] < arr[j]) { // Swap to sort descending
+               int temp = arr[i];
+               arr[i] = arr[j];
+               arr[j] = temp;
+            }
+         }
+      }
+   }
+
+   public static void main(String[] args) {
+	Scanner scnr = new Scanner(System.in);
+	int max = scnr.nextInt();
+	int[] sortArray = new int[max];
+	int i;
+	
+	for (i=0; i < max; ++i){
+		sortArray[i] = scnr.nextInt();
+	}
+	sortArray(sortArray, max);
+
+   for (i = 0; i < max; ++i) {
+      System.out.print(sortArray[i] + ",");
+   }
+   System.out.println();		
+   }
+}
