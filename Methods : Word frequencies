@@ -1,0 +1,45 @@
+/* (zybooks 6.29 LAB: Word frequencies - methods)
+Define a method named getWordFrequency that takes an array of strings, the size of the array, and a search word as parameters. Method getWordFrequency() then returns the number of occurrences of the search word in the array parameter (case insensitive).
+
+Then, write a main program that reads a list of words into an array, calls method getWordFrequency() repeatedly, and outputs the words in the arrays with their frequencies. The input begins with an integer indicating the number of words that follow. Assume that the list will always contain less than 20 words. */
+
+import java.util.Scanner;
+
+public class LabProgram {
+
+   /* Define method to count occurrences of a word (case-insensitive). Method creation: Writing a reusable function that performs a specific task.
+Parameters: Passing data (words, numWords, and searchWord) into the method.
+Return type: Using int to return a numerical result (frequency count). Encapsulation: The method hides the logic details from main(). */
+
+   public static int getWordFrequency(String[] words, int numWords, String searchWord) {
+      int count = 0;
+      for (int i = 0; i < numWords; ++i) {
+         if (words[i].equalsIgnoreCase(searchWord)) {
+            count++;
+         }
+      }
+      return count;
+   }
+
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int numWords = scnr.nextInt();
+      String[] userWords = new String[numWords];
+/*Array declaration and initialization
+Accessing elements by index
+Using array length in loops
+Handling input size dynamically (based on user input).  */
+      
+      // Read the words into the array
+      for (int i = 0; i < numWords; ++i) {
+         userWords[i] = scnr.next();
+      }
+
+      // Output each word and its frequency
+      for (int i = 0; i < numWords; ++i) {
+         int freq = getWordFrequency(userWords, numWords, userWords[i]);
+         System.out.println(userWords[i] + " " + freq);
+//Nested calls: Calling getWordFrequency() inside another loop
+      }
+   }
+}
