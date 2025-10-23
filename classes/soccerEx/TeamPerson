@@ -1,0 +1,28 @@
+/* Creating a program may start by a programmer deciding what "things" exist, and what each thing contains and does.
+Good practice would be to first write the TeamPerson class and then test that class, followed by writing the SoccerTeam class and testing that class. */
+
+public class TeamPerson {
+   private String fullName;
+   private int ageYears;
+   
+   public void setFullName(String firstAndLastName) {
+      fullName = firstAndLastName;
+   }
+   
+   public void setAgeYears(int ageInYears) {
+      ageYears = ageInYears;
+   }
+   
+   public String getFullName() {
+      return fullName;
+   }
+   
+   public int getAgeYears() {
+      return ageYears;
+   }
+   
+   public void print() {
+      System.out.println("Full name: " + fullName);
+      System.out.println("Age (years): " + ageYears);
+   }
+}
