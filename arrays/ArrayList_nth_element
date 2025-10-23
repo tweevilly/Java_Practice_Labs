@@ -1,5 +1,9 @@
 /* Figure 7.14.1: ArrayList's ith element can be directly accessed using .get(i): Most popular OS program.
-The ArrayList's get() method returns the element at the specified list location, and can be used to lookup the Nth item in a list. The program below allows a user to print the name of the Nth most popular operating system. The program accesses the Nth most popular operating system using operatingSystems.get(nthOS - 1);. Note that the index is nthOS - 1 rather than just nthOS because an ArrayList's indices start at 0, so the 1st operating system is at index 0, the 2nd at index 1, etc.  */
+The ArrayList's get() method returns the element at the specified list location, and can be used to lookup the Nth item in a list. 
+The program below allows a user to print the name of the Nth most popular operating system. 
+The program accesses the Nth most popular operating system using operatingSystems.get(nthOS - 1);. 
+Note that the index is nthOS - 1 rather than just nthOS because an ArrayList's indices start at 0, 
+so the 1st operating system is at index 0, the 2nd at index 1, etc.  */
 
 import java.util.ArrayList;
 import java.util.Scanner;
