@@ -50,13 +50,16 @@
   Converting to primitive types
   
       intValue()
-          Returns the value of the wrapper class object as a primitive int value, type casting if necessary.
+          Returns the value of the wrapper class object as a primitive int value, 
+          type casting if necessary.
       
       doubleValue()
-          Returns the value of the wrapper class object as a primitive double value, type casting if necessary.
+          Returns the value of the wrapper class object as a primitive double value, 
+          type casting if necessary.
       
       longValue()
-          Returns the value of the wrapper class object as a primitive long value, type casting if necessary.
+          Returns the value of the wrapper class object as a primitive long value, 
+          type casting if necessary.
 
   Converting To and From Strings
 
