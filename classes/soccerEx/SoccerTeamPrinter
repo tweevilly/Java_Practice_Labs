@@ -1,4 +1,5 @@
-//Figure 7.6.1: SoccerTeam and TeamPerson classes.
+/*Figure 7.6.1: SoccerTeam and TeamPerson classes.
+main() is a static method that is independent of class objects. main() can access other static methods and static fields of the class, but cannot directly access non-static methods or fields   */
 
 public class SoccerTeamPrinter {
    public static void main(String[] args) {
