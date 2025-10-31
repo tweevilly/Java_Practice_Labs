@@ -1,0 +1,93 @@
+/* Write code in the derived class of RubberDuck.java that
+has the following method:
+getBehavior: an overridden method that returns the string
+"squeaks"
+Write code in the derived class of MallardDuck.java that has
+the following method:
+getBehavior: an overridden method that returns the string
+"flies"
+  If the input is:
+  Mallard Austin
+  Rubber Squeaker
+  Output: 
+  Duck Information:
+  Austin the Mallard duck flies!
+  Squeaker the Rubber duck squeaks!    */
+
+public class Duck {
+    private String name, behavior, type;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+    public String getBehavior() {
+        return behavior;
+    }    
+}
+__________________________________________________________
+public class RubberDuck extends Duck {   
+   //TODO: Define getBehavior() overridden method and return String "squeaks"
+   @Override
+    public String getBehavior() {
+      return "squeaks";
+   }    
+}
+_________________________________________________________
+public class MallardDuck extends Duck{
+    //TODO: Define getBehavior() overridden method and return String "flies"
+    @Override
+    public String getBehavior() {
+      return "flies";
+   }      
+}
+__________________________________________________________
+import java.util.Scanner;
+
+public class DuckInfo {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);   
+      
+      // Variables for Scanner object input
+      String type, name;
+      
+      // Input Mallard Duck type and name
+      type = scnr.next();
+      name = scnr.next();
+      
+      
+      System.out.println("Duck Information:"); 
+      
+      // Create MallardDuck object
+      MallardDuck md = new MallardDuck();
+      
+      // Call MallardDuck setters and pass type and name variables as arguments
+      md.setType(type);
+      md.setName(name);
+      
+      //Call MallardDuck getters and display output e.g. tab(name getter) the (type getter) duck (behavior getter)! 
+      System.out.println(md.getName() + " the " + md.getType() + " duck " + md.getBehavior() + "!");
+      
+      // Input RubberDuck type and name
+      type = scnr.next();
+      name = scnr.next();
+      
+      // Create RubberDuck object
+      RubberDuck rd = new RubberDuck();
+      
+      // Call RubberDuck setters
+      rd.setType(type);
+      rd.setName(name);
+      
+      //Call RubberDuck getters and display output e.g. tab(name getter) the (type getter) duck (behavior getter)! 
+      System.out.println(rd.getName() + " the " + rd.getType() + " duck " + rd.getBehavior() + "!");
+
+    }
+}
