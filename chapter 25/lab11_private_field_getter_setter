@@ -1,0 +1,58 @@
+/* Debt ratio is a ratio of total debt to total assets,
+calculated using the formula:  Total Debt / Total Assets
+The DebtMeasure.java file contains existing code that
+collects input for totalDebt and totalAssets, then passes 
+the inputs into the Debt object's setDR() method. 
+The code then returns the debtRatio using the Debt object's
+getDR() method.
+Write code in the Debt class of Debt.java that has the
+following field and methods:
+  debtRatio: private field of type double
+  calculateDR: a private helper method with two parameter
+  variables of type double for totalDebt and totalAssets
+The calculateDR method should calculate the debt ratio and
+assign the results to the debtRatio field.
+Use the method signature private void calculateDR(double
+totalDebt, double totalAssets).
+getDR: public accessor method that returns the debtRatio
+field value.
+setDR: public mutator method that passes the inputs,
+totalDebt and totalAssets, to the Debt class  */
+
+public class Debt {
+    // TODO: Declare private field - debtRatio
+    private double debtRatio;
+  
+    // TODO: Define private method - calculateDR()
+    private void calculateDR(double totalDebt, double totalAssets){
+       debtRatio = totalDebt / totalAssets; 
+    }
+       
+    // TODO: Define public method - getDR()
+    public double getDR(){
+       return debtRatio;
+    }
+        // TODO: Define public method - SetDR
+   public void setDR(double totalDebt, double totalAssets){
+       calculateDR(totalDebt, totalAssets);
+    }
+    
+ }
+__________________________________________________________
+
+import java.util.Scanner;
+
+public class DebtMeasure {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      
+      Debt debt1 = new Debt();
+            
+      double totalDebt = scnr.nextDouble();
+      double totalAssets = scnr.nextDouble();      
+            
+      debt1.setDR(totalDebt, totalAssets);      
+    
+      System.out.printf("The Company's total debt is in the amount of $%,.2f, and total assets are in the amount of $%,.2f, which gives a debt ratio of %.2f.\n", totalDebt, totalAssets, debt1.getDR());      
+   }
+}
