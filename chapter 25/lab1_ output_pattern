@@ -1,0 +1,37 @@
+/*  Write a program that outputs the pattern shown below, ending with a newline. Each line of the pattern contains 5 characters including whitespace.
+
+The output is:
+
+H   H
+H   H
+HHHHH
+H   H
+H   H    */
+
+public class LabProgram {
+   public static void main(String[] args) {
+      
+      String letter = "H";
+      String space = " ";
+      
+      for(int i =0; i<2; ++i){
+         System.out.print(letter);
+         for(int j =0; j <3; ++j){
+         System.out.print(space);
+         }
+         System.out.println(letter);
+      }
+      for (int i = 0; i <5; ++i) {
+         System.out.print(letter);
+      }
+      System.out.println();
+      for(int i =0; i<2; ++i){
+         System.out.print(letter);
+         for(int j =0; j <3; ++j){
+         System.out.print(space);
+         }
+         System.out.println(letter);
+      }
+         
+   }
+}
