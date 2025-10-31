@@ -1,0 +1,92 @@
+/* Write a program in main() of CustomerAge.java to accept
+one string input and one integer input for a customer's name
+and age fields, respectively. Use the existing customer1 and
+customer2 reference variables provided in the template to
+set the name and age of both customer objects using the
+setName() and setAge() methods.
+  If the input is:  
+  Jane
+  25
+  John
+  29
+  the output is:  
+  Customer that is older:
+  Name: John
+  Age: 29    */
+
+public class Customer {
+   private String name;
+   private int age;
+   
+   public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+   
+   public void printInfo() {
+      System.out.println("Name: " + name);
+      System.out.println("Age: " + age);      
+   }
+}
+_________________________________________________________
+import java.util.Scanner;
+
+public class CustomerAge {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      
+      Customer customer1 = new Customer();
+      Customer customer2 = new Customer();
+      
+      // TODO: Declare name and age variables (string, and int)
+      String name;
+      int age;
+      
+      
+      // TODO: Read name and age input for customer 1
+      name = scnr.next();
+      age = scnr.nextInt();
+      
+      // TODO: Set customer 1 name and age fields using mutator methods (setName() and setAge())      
+      customer1.setName(name);
+      customer1.setAge(age);
+      
+
+      // TODO: Read name and age input for customer 2
+      name = scnr.next();
+      age = scnr.nextInt();
+      
+      
+      // TODO: Set customer 2 name and age fields using mutator methods (setName() and setAge())
+      customer2.setName(name);
+      customer2.setAge(age);
+
+      System.out.println("Customer that is older:");
+      
+      /// TODO: Determine older customer (use getAge())
+      //       and output older customer's info (use printInfo())
+      if (customer1.getAge() > customer2.getAge()){
+         customer1.printInfo();
+      }
+      else if (customer2.getAge() > customer1.getAge()){
+         customer2.printInfo();
+      }
+      else {
+         System.out.println("Both customers are the same age.");
+         customer1.printInfo();
+      customer2.printInfo();
+      }    
+       
+   }
+}
