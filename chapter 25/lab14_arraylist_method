@@ -1,0 +1,131 @@
+Write code in the Customer class of Customer.java to do
+the following:
+Create a Grocery ArrayList.
+Define a method named getGroceryList that returns the
+Grocery ArrayList.
+Use the method signature public ArrayList<Grocery>
+getGroceryList()
+Define a method named addGrocery with a Grocery parameter
+variable.
+The addGrocery method should add a Grocery object to the
+Grocery ArrayList via the parameter.
+Use the method signature public void addGrocery(Grocery
+grocery)
+  If the input is:  
+    John
+    Eggs
+    5.99
+    12
+    y
+    Oatmeal
+    8.99
+    1
+  output:
+    John has the following items:  
+    Item: Eggs
+    Price: 5.99
+    Quantity: 12  
+    Item: Oatmeal
+    Price: 8.99
+    Quantity: 1  
+    Total: 14.98
+
+public class Grocery {
+   private String item;
+   private double price;
+   private int quantity;
+   
+   public Grocery(String item, double price, int quantity) {
+        this.item = item;
+        this.price = price;
+        this.quantity = quantity;
+    }
+     public String getItem() {
+        return item;
+    }
+    public void setItem(String item) {
+        this.item = item;
+    }
+    public double getPrice() {
+        return price;
+    }
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    public int getQuantity() {
+        return quantity;
+    }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+}
+__________________________________________________________
+import java.util.ArrayList;
+public class Customer {
+   private int id;
+   private String name;
+   
+   //TODO: Create a Grocery ArrayList
+   private ArrayList<Grocery> groceryList = new ArrayList<Grocery>();    
+   
+   //TODO: Define getGroceryList() method that returns Grocery ArrayList 
+   public ArrayList<Grocery> getGroceryList(){
+      return groceryList;
+   }
+   //TODO: Define addGrocery(Grocery grocery) that adds a Grocery object to Grocery ArrayList via the grocery parameter
+   public void addGrocery(Grocery grocery){
+      groceryList.add(grocery);
+   }
+   public int getId() {
+      return id;
+   }
+   public void setId(int id) {
+      this.id = id;
+   }
+   public String getName() {
+      return name;
+   }
+   public void setName(String name) {
+      this.name = name;
+   }
+_______________________________________________________________
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class CustomerInfo { 
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);      
+      String name, item;
+      double price, total = 0;
+      int quantity;
+      
+      Grocery  grocery = null;
+      Customer customer1 = new Customer();
+      name = scnr.next();      
+      String sentinel = "y";
+      
+      do{   
+         
+         item = scnr.next();
+         price = scnr.nextDouble();
+         quantity = scnr.nextInt();
+         
+         grocery = new Grocery(item, price, quantity);          
+         customer1.addGrocery(grocery);
+         
+         sentinel = scnr.next();         
+         
+      }while(sentinel.equals("y"));     
+      
+      System.out.println(name + " has the following items:\n");
+      
+      for(Grocery g : customer1.getGroceryList()){
+         System.out.println("Item: " + g.getItem());
+         System.out.println("Price: " + g.getPrice());
+         System.out.println("Quantity: " + g.getQuantity() + "\n");   
+         total += g.getPrice();
+      }
+      
+      System.out.println("Total: " + total);
+   }
+}
