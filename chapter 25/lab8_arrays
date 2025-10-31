@@ -1,0 +1,35 @@
+/* Write a program that creates an array to hold three
+values of type double. The program should collect the three
+double values as input and store them in the array. Then 
+calculate the average value of the array.
+  If the input is:  
+  10.0
+  10.5
+  11.0
+  the output is:  
+  Array items: 10.0, 10.5, 11.0
+  Average: 10.5  */
+
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      double [] userVals = new double[3];
+      int i;
+      double sum=0;
+      
+      System.out.print("Array items: ");
+      for (i =0; i < 3; ++i) {
+         userVals[i] = scnr.nextDouble();
+         System.out.print(userVals[i]);
+         if (i < 2){
+            System.out.print(", ");
+         }
+         sum += userVals[i];
+      }
+      System.out.println();
+      System.out.println("Average: " + sum/3);
+      
+   }
+}
