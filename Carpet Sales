@@ -1,0 +1,64 @@
+/* 13.18 LAB*: Program: Carpet sales:  Write a program to calculate the cost for replacing carpet for a single room. 
+Carpet is priced by square foot. Total cost includes carpet, labor and sales tax. 
+Dollar values are output with two decimals. For example, System.out.printf("Cost: $%.2f", cost);
+
+If the input is:                the output is:
+
+0.95 12 12                      Order #1
+1.25 8 18                       Room: 144 sq ft
+1.12 10 17                      Carpet: $164.16
+                                Labor: $108.00
+                                Tax: $19.05
+                                Cost: $291.21
+ 
+                                Order #2
+                                Room: 144 sq ft
+                                Carpet: $216.00
+                                Labor: $108.00
+                                Tax: $22.68
+                                Cost: $346.68
+                                
+                                Order #3
+                                Room: 170 sq ft
+                                Carpet: $228.48
+                                Labor: $127.50
+                                Tax: $24.92
+                                Cost: $380.90
+                                
+                                Total Sales: $1018.79  */
+
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      double totalSales = 0.0;
+
+      for (int i = 1; i <= 3; ++i) {  
+         totalSales += calcRoomCost(scnr, i); 
+      }
+      System.out.printf("Total Sales: $%.2f\n", totalSales);
+   }
+   
+   public static double calcRoomCost(Scanner scnr, int orderNum) {      //create method for reusibility
+
+       double carpetPrice = scnr.nextDouble();
+       int roomWidth = scnr.nextInt();
+       int roomLength = scnr.nextInt();
+       
+       int area = roomWidth * roomLength;
+       double adjustCarpet  = ((area * 0.2) + area) * carpetPrice;
+       double labor = area * 0.75;
+       double tax = (labor + adjustCarpet) * 0.07;
+       double cost = adjustCarpet + tax + labor;
+       
+       System.out.println("Order #" + orderNum);
+       System.out.println("Room: " + area +  " sq ft");
+       System.out.printf("Carpet: $%.2f\n", adjustCarpet);
+       System.out.printf("Labor: $%.2f\n", labor);
+       System.out.printf("Tax: $%.2f\n", tax);
+       System.out.printf("Cost: $%.2f\n", cost);
+       System.out.println();
+       return cost;
+   }
+}
