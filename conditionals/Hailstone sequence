@@ -1,0 +1,35 @@
+/* The following rules will always create a sequence that ends with 1, called the hailstone sequence:
+  If n is even, divide it by 2
+  If n is odd, multiply it by 3 and add 1 (i.e. 3n +1)
+  Continue until n is 1
+Write a program that reads an integer as input and prints the hailstone sequence starting with the integer
+entered. 
+Format the output so that ten integers, each separated by a tab character (\t), are printed per line.  */
+
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int input = scnr.nextInt();
+      int count =0;
+      
+      while (input != 1){
+         System.out.print(input + "\t");
+         count++;
+         
+         if (count % 10 == 0){
+            System.out.println();
+         }
+         
+         if(input % 2 == 0){
+            input = input/2;
+         }
+         else {
+            input = (input *3) + 1;
+         }  
+      }
+      System.out.print(input);
+      System.out.println();
+   }  
+}
