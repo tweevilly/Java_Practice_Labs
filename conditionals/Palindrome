@@ -1,0 +1,24 @@
+A palindrome is a word or a phrase that is the same when read both forward and backward. 
+Write a program whose input is a word or phrase, and that outputs whether the input is a palindrome.
+    Input                                  Input
+    evil is alive                          sees
+    Your output                            Your output
+    not a palindrome: evil is alive        palindrome: sees
+
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      String input= scnr.nextLine();
+      
+      String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();    //here ^ means match any single character inside the brackets instedof replace
+      String reversed = new StringBuilder(normalized).reverse().toString();
+      if (normalized.equals(reversed)){
+         System.out.println("palindrome: " + input);
+      }
+      else {
+         System.out.println("not a palindrome: " + input);
+      }
+   }
+}
