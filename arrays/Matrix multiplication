@@ -1,0 +1,62 @@
+A matrix is a rectangle of numbers in rows and columns. 
+A 1xN matrix has one row and N columns. 
+An NxN matrix has N rows and N columns.
+
+Multiplying a 1xN matrix A and an NxN matrix B produces a 1xN matrix C. 
+To determine the Nth element of C multiply each element of A by each element of the Nth column of B 
+and sum the results. 
+
+Write a program that reads a 1xN matrix A and an NxN matrix B from input and 
+outputs the 1xN matrix product, C. The first integer input is N, followed by one 
+row of N integers for matrix A and then N rows of N integers for matrix B. 
+N can be of any size >= 2.
+
+For coding simplicity, follow each output integer by a space, even the last one. 
+The output ends with a newline.
+
+      If the input is:
+      2
+      2 3
+      1 2
+      3 4
+      The program output is:      
+      11 16 
+
+import java.util.Scanner; 
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int n = scnr.nextInt();
+      
+      if (n < 2){
+         return;
+      }
+      
+      int[] matrixA = new int[n];        // Matrix A
+      int[][] matrixB = new int[n][n];   // Matrix B 
+      int[] matrixC = new int[n];        // Matrix C
+      
+      for (int i = 0; i < n; ++i){
+         matrixA[i] = scnr.nextInt();
+      }
+      
+      for (int i = 0; i < n; ++i){
+         for (int j = 0; j <n; ++j){
+            matrixB[i][j] = scnr.nextInt();
+         }
+      }
+      
+      for (int j = 0; j < n; ++j) {
+         int sum = 0;
+         for (int i = 0; i < n; ++i) {
+            sum += matrixA[i] * matrixB[i][j];
+         }
+         matrixC[j] = sum;
+      }
+      for (int j = 0; j < n; ++j) {
+         System.out.print(matrixC[j] + " ");
+      }
+      System.out.println();
+   }
+}
