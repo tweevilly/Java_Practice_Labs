@@ -1,0 +1,42 @@
+Write a program that stores a list of positive integers from input into an array and outputs the Nth number
+from the end of the array. A negative integer indicates the end of the input and is not stored in the array.
+Convert the last negative integer to positive and use as N. 
+Output the last integer (as negative) if the size of the array is smaller than N. 
+Assume the array will always contain fewer than 20 integers.
+  
+  Ex: If the input is:          Ex: If the input is:
+  1 5 9 7 5 -3                  1 2 3 4 5 -6
+  the output is:                the output is:
+  9              `               -6   
+
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int[] array = new int[20]; // array will hold fewer than 20 integers
+      int count = 0;
+      int n = 0;
+
+      while (true) {
+         int num = scnr.nextInt();
+
+         if (num < 0) {
+            n = -num; // convert last negative to positive
+            break;
+         }
+
+         array[count] = num;
+         count++;
+      }
+
+      // If array is smaller than N, output the negative number
+      if (count < n) {
+         System.out.println(-n);
+      } 
+      else {
+         // Nth number from the end means index = count - n
+         System.out.println(array[count - n]);
+      }
+   }
+}
