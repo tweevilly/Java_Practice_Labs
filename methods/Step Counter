@@ -1,0 +1,26 @@
+A pedometer treats walking 1 step as walking 2.5 feet. Define a method named feetToSteps 
+that takes a double as a parameter, representing the number of feet walked, and returns an 
+integer that represents the number of steps walked. Then, write a main program that reads 
+the number of feet walked as an input, calls method feetToSteps() with the input as an 
+argument, and outputs the number of steps.
+
+     If the input is:    the output is:
+      150.5                60
+
+import java.util.Scanner;
+
+public class LabProgram {
+   
+   public static int feetToSteps(double feet){    //importanto return int
+      double steps = feet / 2.5;                  // takes in double 
+      return (int) steps;
+   }
+      
+   
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);      
+      double feet = scnr.nextDouble();
+      int steps = feetToSteps(feet);
+      System.out.println(steps);  
+   }
+}
