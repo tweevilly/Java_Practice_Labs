@@ -1,0 +1,46 @@
+/* split entries by ","
+store values in two arrays
+if array value equals name contact name output phone number 
+Write a program that first takes as input an integer N that represents the number of word pairs
+in the list to follow. Word pairs consist of a name and a phone number (both strings), 
+separated by a comma. That list is followed by a name, and your program should output the 
+phone number associated with that name. Output "None" if name is not found. 
+Assume that the list will always contain less than 20 word pairs.
+
+    If the input is:
+      3 Joe,123-5432 Linda,983-4123 Frank,867-5309 Frank      
+    the output is:      
+      867-5309  */
+
+import java.util.Scanner; 
+
+public class LabProgram {
+   public static String getPhoneNumber(String[] nameArr, String[] phoneNumberArr, String contactName, int arraySize){
+      for (int i = 0; i < arraySize; ++i) {
+         if (nameArr[i].equals(contactName)) {
+            return phoneNumberArr[i];
+         }
+      }
+      return "None";
+   }
+   
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner (System.in);
+      
+      int arraySize = scnr.nextInt();
+      
+      String[] nameArr = new String[arraySize];
+      String[] phoneNumberArr = new String[arraySize];
+      for (int i = 0; i < arraySize; ++i) {
+         String entry = scnr.next();  // example: "Joe,123-5432"
+         String[] parts = entry.split(",");
+         nameArr[i] = parts[0];
+         phoneNumberArr[i] = parts[1];
+      }
+      
+      String contactName = scnr.next();
+      
+      System.out.println(getPhoneNumber(nameArr, phoneNumberArr, contactName, arraySize));
+      
+   }
+}
