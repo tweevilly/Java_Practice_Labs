@@ -1,0 +1,61 @@
+/* Write a program that takes in a positive integer as input, and outputs a string of 1's and 0's 
+representing the integer in binary. The program must define and call the following two methods. 
+Define a method named intToReverseBinary() that takes an int as a parameter and returns a string of 1's 
+and 0's representing the integer in binary (in reverse). 
+Define a method named stringReverse() that takes a string as a parameter and returns a 
+string representing the input string in reverse. */
+
+public class LabProgram {
+   
+   public static String intToReverseBinary(int integerValue){
+      int x = integerValue;
+      String binary = "";
+      while (x > 0){
+         int output = x % 2;
+         binary = binary + output;
+         x = x / 2;
+      }
+      return binary;
+   }
+   
+   public static String stringReverse(String inputString){
+      String newString = "";
+      for (int i=0; i < inputString.length(); ++i){
+         newString = inputString.charAt(i) + newString;
+      }
+      return newString;
+   }   
+   
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner (System.in);
+      int num = scnr.nextInt();
+      
+      String binary = intToReverseBinary(num);
+      String reversedBinary = stringReverse(binary);
+      System.out.println(reversedBinary);         
+   }
+}
+
+__________________________________________________________________________________________________
+/* note we could entirely remove the stringReverse method if we tweaked the 
+intToBinary method in just one line */
+public class LabProgram {
+   
+   public static String intToReverseBinary(int integerValue){
+      int x = integerValue;
+      String binary = "";
+      while (x > 0){
+         int output = x % 2;
+         binary = output + binary;    //this switch would store binary form
+         x = x / 2;
+      }
+      return binary;
+   }   
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner (System.in);
+      int num = scnr.nextInt();
+      
+      String binary = intToReverseBinary(num);
+      System.out.println(binary);         
+   }
+}
