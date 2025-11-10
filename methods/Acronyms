@@ -1,0 +1,34 @@
+Define a method named createAcronym that takes a string parameter and returns the acronym of the string 
+parameter. Append a period (.) after each letter in the acronym. If a word begins with a lower case letter,
+don't include that letter in the acronym. Then write a main program that reads a phrase from input, calls
+createAcronym() with the input phrase as argument, and outputs the returned acronym. Assume the input has at
+least one upper case letter.
+     If the input is:                            the output should be:
+    Association for computing MACHINERY            A.M
+
+import java.util.Scanner;
+
+public class LabProgram {
+   public static String createAcronym(String userPhrase){
+      String acronym = "";
+      String[] words = userPhrase.split(" ");   // split phrase into words
+      for (String word : words) {
+         if (!word.isEmpty() && Character.isUpperCase(word.charAt(0))) {
+            acronym += word.charAt(0) + "."; // append uppercase first letter + period
+         }
+      }
+
+      return acronym;
+   }
+   
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner (System.in);
+      String userPhrase = scnr.nextLine();
+      
+      String acronym = createAcronym(userPhrase);
+      System.out.println(acronym);
+      
+   }
+}
+
+
