@@ -1,0 +1,32 @@
+Write a program that removes all non-alphabetic characters from the given input.
+The program must define and call the following method that takes a string as a parameter 
+and returns the string without any non-alphabetic characters.
+// public static String removeNonAlpha(String userString)
+  
+  If the input is:        the output is:
+  -Hello, 1 world$!      Helloworld
+________________________________________________________________________________________________
+import java.util.Scanner; 
+
+public class LabProgram {
+   public static String removeNonAlpha(String userString){
+     
+           /* replaceAll() replaces all substrings matching a regex pattern.
+            [^a-zA-Z] means:
+            [] → character class
+            ^ → negation (means “not”)
+            a-zA-Z → lowercase and uppercase English letters */
+     
+      String adjusted = userString.replaceAll("[^a-zA-Z]", "");
+      return adjusted;
+   }       
+   
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner (System.in);
+      String userString = scnr.nextLine();
+      String adjusted = removeNonAlpha(userString);
+      System.out.println(adjusted);
+      
+      
+   }
+}
