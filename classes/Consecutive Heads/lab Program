@@ -28,14 +28,34 @@ public class LabProgram {
       }
    return c.numFlips();
    }
+
+   public static int countHeads(GVCoin c, int goal){
+      int flipsTaken = 0;
+      while (flipsTaken < goal){
+         c.flip();
+         if(c.isHeads()){
+            flipsTaken++;
+         }
+      }
+   return c.numFlips();
+   } 
    
    public static void main(String[] args) {
       GVCoin c = new GVCoin(15);   // Create a GVCoin object with seed value 15
       int numHeads = 5; // Desire 5 consecutive heads
       int flips = consecutiveHeads(c, numHeads); // Should return 21 using GVCoin object with seed value 15
       System.out.println("Total number of flips for 5 consecutive heads: " + flips);
+
       int numTails = 100;   // Desire 100 tails
       int total = flipForTails(c, numTails); // Should return 216 using GVCoin object with seed value 15
       System.out.println("Total number of flips for 100 tails: " + total);
+
+      int numHeads = 20;   // Desire 20 heads
+      int numFlips = countHeads(c, numHeads);   // Should return 34 using GVCoin object with seed value 15
+      System.out.println("Total number of flips for 20 heads: " + numFlips);
+
+      numHeads = 100;   // Desire 100 heads
+      numFlips = countHeads(c, numHeads);   // Should return 192 using GVCoin object with seed value 15
+      System.out.println("Total number of flips for 100 heads: " + numFlips);
    }
 }
