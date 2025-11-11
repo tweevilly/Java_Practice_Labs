@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+
+public class Course {
+
+	private ArrayList<Student> roster; //collection of Student objects
+
+	public Course() {
+		roster = new ArrayList<Student>();
+	}
+//create a new arrayList to store students with GPA >= 3.5
+	public ArrayList<Student> getDeansList() {
+	   ArrayList<Student> deansList = new ArrayList<Student>();
+	   
+		for(int i =0; i < roster.size(); ++i){
+		   Student student = roster.get(i);
+		   if(student.getGPA() >= 3.5){
+		      deansList.add(student);
+		   }
+		}
+	return deansList;
+	}
+
+	public void addStudent(Student s) {
+		roster.add(s);
+	}
+}
