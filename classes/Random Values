@@ -1,0 +1,64 @@
+/* write a class called RandomNumbers that has three integer instance
+Write getter method for each variable: getVar1(), getVar2() and getVar3().
+setRandomValues( ) - accepts a low and high integer values as parameters, 
+and sets var1, var2, and var3 to random numbers (generated using the Random class) 
+within the range of the low and high input values (inclusive).
+getRandomValues( ) - prints out the 3 random numbers in the format: 
+"Random values: var1 var2 var3"
+
+    If the input is:        the output may be:
+    15 20                    Random values: 17 15 19    */
+
+import java.util.Random;
+
+public class RandomNumbers {
+   // Instance variables
+   private int var1;
+   private int var2;
+   private int var3;
+   
+   // Getter methods
+   public int getVar1() {
+      return var1;
+   }
+
+   public int getVar2() {
+      return var2;
+   }
+
+   public int getVar3() {
+      return var3;
+   }
+
+   // Sets var1, var2, and var3 to random numbers in the given range
+   public void setRandomValues(int low, int high) {
+      Random rand = new Random();
+      var1 = rand.nextInt(high - low + 1) + low;
+      var2 = rand.nextInt(high - low + 1) + low;
+      var3 = rand.nextInt(high - low + 1) + low;
+   }
+
+   // Prints the random values in the required format
+   public void getRandomValues() {
+      System.out.println("Random values: " + var1 + " " + var2 + " " + var3);
+   }
+}
+___________________________________________________________________________________________
+
+import java.util.Scanner;
+
+public class LabProgram {
+   
+   // main method used to test your code
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int low = sc.nextInt();
+		int high = sc.nextInt();
+		
+		RandomNumbers rn = new RandomNumbers();
+		rn.setRandomValues(low, high);
+		rn.getRandomValues();
+	}
+	
+}
