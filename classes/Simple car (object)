@@ -1,0 +1,57 @@
+/* Given two integers that represent the miles to drive forward and the miles to drive in 
+reverse as user inputs, create a SimpleCar object that performs the following operations:
+    Drives input number of miles forward
+    Drives input number of miles in reverse
+    Honks the horn
+    Reports car status
+    The SimpleCar class is found in the file SimpleCar.java.*/
+
+public class SimpleCar {    // A CAR IS AN OBJECT
+                             
+   // Number of miles driven
+   private int miles;
+   
+   public SimpleCar(){            //SimpleCar methods are instnace methods to use we need an object
+      miles = 0;
+   }
+
+   public void drive(int dist){      //methods can only be called if they are declared static
+      miles = miles + dist;
+   }
+ 
+   public void reverse(int dist){
+      miles = miles - dist;
+   }
+   
+   public int getOdometer(){
+      return miles;
+   }
+
+   public void honkHorn(){
+      System.out.println("beep beep");
+   }
+
+   public void report(){
+      System.out.println("Car has driven: " + miles + " miles");
+   }
+
+}
+___________________________________________________________________________________________
+
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int forward = scnr.nextInt();
+      int backward = scnr.nextInt();
+      
+      SimpleCar myCar = new SimpleCar();    // to use SimpleCar class, we create an object/instance myCar
+            
+      myCar.drive(forward);
+      myCar.reverse(backward);
+      myCar.honkHorn();
+      myCar.report(); 
+      
+   }
+}
