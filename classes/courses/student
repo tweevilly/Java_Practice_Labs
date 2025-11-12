@@ -1,4 +1,5 @@
-public class Student {
+public class Student {		//student object with three primitive data types
+							//bc it is a class you havemethods to manipulate those datat types
 
 	private String first;  // first name
 	private String last;   // last name
