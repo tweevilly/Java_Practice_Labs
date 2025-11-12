@@ -33,6 +33,19 @@ public class Course {
 	   return count;
 	}
 
+	public Student findStudentHighestGpa() {
+		Student top = roster.get(0);
+	   for(int i =0; i < roster.size(); ++i){
+		   Student student = roster.get(i);
+		   if(student.getGPA() >= top.getGPA()){
+		      top = student;
+		   }
+	   }
+	   return top;
+	
+	}
+
+
 	public void dropStudent(String last) {
 		for(int i =0; i < roster.size(); ++i){
 		   Student student = roster.get(i);
