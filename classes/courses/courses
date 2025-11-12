@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
-public class Course {
+public class Course {		//object is an arrayList of Students
+							//methods are functions to manipulate objects/instances of the class
 
 	private ArrayList<Student> roster; //collection of Student objects
 
