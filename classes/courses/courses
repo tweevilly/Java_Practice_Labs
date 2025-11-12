@@ -7,7 +7,9 @@ public class Course {
 	public Course() {
 		roster = new ArrayList<Student>();
 	}
+
 //create a new arrayList to store students with GPA >= 3.5
+
 	public ArrayList<Student> getDeansList() {
 	   ArrayList<Student> deansList = new ArrayList<Student>();
 	   
@@ -18,6 +20,17 @@ public class Course {
 		   }
 		}
 	return deansList;
+	}
+
+	public int countHonors() {
+	   int count =0;
+	   for(int i =0; i < roster.size(); ++i){
+		   Student student = roster.get(i);
+		   if(student.getGPA() >= 3.0){
+		      count++;
+		   }
+	   }
+	   return count;
 	}
 
 	public void dropStudent(String last) {
