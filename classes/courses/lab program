@@ -26,5 +26,8 @@ public class LabProgram {
     System.out.println("Honors count: " + honorsCount);
 	System.out.println("Course size: " + beforeCount + " students");		
 	System.out.println("Course size after drop: " + cis162.countStudents() + " 
+
+	Student student = course.findStudentHighestGpa();
+	System.out.println("Top student: " + student);
 	}    
 }
