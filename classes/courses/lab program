@@ -22,6 +22,8 @@ public class LabProgram {
 	beforeCount = cis162.countStudents();
     cis162.dropStudent(toDrop);
 
+	honorsCount = course.countHonors();
+    System.out.println("Honors count: " + honorsCount);
 	System.out.println("Course size: " + beforeCount + " students");		
 	System.out.println("Course size after drop: " + cis162.countStudents() + " 
 	}    
