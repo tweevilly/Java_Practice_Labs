@@ -1,7 +1,0 @@
-public class RubberDuck extends Duck {   
-   //TODO: Define getBehavior() overridden method and return String "squeaks"
-   @Override
-    public String getBehavior() {
-      return "squeaks";
-   }    
-}
