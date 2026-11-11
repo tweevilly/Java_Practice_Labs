@@ -1,0 +1,7 @@
+public class MallardDuck extends Duck{
+    //TODO: Define getBehavior() overridden method and return String "flies"
+    @Override
+    public String getBehavior() {
+      return "flies";
+   }      
+}

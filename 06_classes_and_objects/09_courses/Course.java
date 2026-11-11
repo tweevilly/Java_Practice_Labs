@@ -1,0 +1,66 @@
+import java.util.ArrayList;
+
+public class Course {		//object is an arrayList of Students
+							//methods are functions to manipulate objects/instances of the class
+
+	private ArrayList<Student> roster; //collection of Student objects
+
+	public Course() {
+		roster = new ArrayList<Student>();
+	}
+
+//create a new arrayList to store students with GPA >= 3.5
+
+	public ArrayList<Student> getDeansList() {
+	   ArrayList<Student> deansList = new ArrayList<Student>();
+	   
+		for(int i =0; i < roster.size(); ++i){
+		   Student student = roster.get(i);
+		   if(student.getGPA() >= 3.5){
+		      deansList.add(student);
+		   }
+		}
+	return deansList;
+	}
+
+	public int countHonors() {
+	   int count =0;
+	   for(int i =0; i < roster.size(); ++i){
+		   Student student = roster.get(i);
+		   if(student.getGPA() >= 3.0){
+		      count++;
+		   }
+	   }
+	   return count;
+	}
+
+	public Student findStudentHighestGpa() {
+		Student top = roster.get(0);
+	   for(int i =0; i < roster.size(); ++i){
+		   Student student = roster.get(i);
+		   if(student.getGPA() >= top.getGPA()){
+		      top = student;
+		   }
+	   }
+	   return top;
+	
+	}
+
+
+	public void dropStudent(String last) {
+		for(int i =0; i < roster.size(); ++i){
+		   Student student = roster.get(i);
+		   if(student.getLast().equals(last)){
+		      roster.remove(i);
+		   }
+		}
+	}
+
+	public void addStudent(Student s) {
+		roster.add(s);
+	}
+
+	public int countStudents() {
+		return roster.size();
+	}
+}
